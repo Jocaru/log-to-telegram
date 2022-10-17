@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+   log-to-telegram:
+      build: bot
+      container_name: log-to-telegram
+      volumes:
+         - /path/to/log:/app/log/log.txt:ro
+      restart: unless-stopped
+      environment:
+         - TELEGRAM_API_KEY=<YOUR-BOT-TOKEN>
+         - CHAT_ID=<YOUR-CHAT-ID>
